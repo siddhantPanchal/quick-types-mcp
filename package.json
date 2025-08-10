@@ -1,0 +1,25 @@
+{
+  "name": "quick-types-mcp",
+  "version": "1.0.0",
+  "description": "A MCP server from quick-types.io",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "tsc && node dist/index.js",
+    "serve": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "quicktype-core": "^23.2.6",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "keywords": []
+}

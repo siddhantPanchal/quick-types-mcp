@@ -1,0 +1,13 @@
+- [x] Initialize a Node.js project
+- [x] Install TypeScript
+- [x] Install the MCP SDK (`@modelcontextprotocol/sdk`)
+- [x] Install `quicktype-core`
+- [x] Create the main server file (e.g., `src/index.ts`)
+- [x] Define the `generateDartModels` tool with the specified inputs and outputs
+- [x] Implement the logic to convert JSON to Dart using `quicktype-core`
+- [x] Handle the options to customize the generated Dart code
+- [x] Implement error handling for invalid JSON input
+- [x] Compile the TypeScript code to JavaScript
+- [x] Run the server
+- [x] Test the `generateDartModels` tool with a valid JSON input
+- [x] Test the `generateDartModels` tool with an invalid JSON input
