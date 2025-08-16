@@ -59,16 +59,39 @@ server.registerTool(
     description:
       "A tool that leverages quick-types.io to generate Dart data models from JSON input. The server will expose a tool to the LLM that allows it to convert JSON objects or schemas into Dart classes.",
     inputSchema: {
-      jsonString: z.string(),
-      modelName: z.string().default("ExampleModel"),
-      options: z.object({
-        codersInClass: z.boolean().default(true),
-        useFreezed: z.boolean(),
-        nullSafety: z.boolean().default(true),
-        useJsonAnnotation: z.boolean(),
-        copyWith: z.boolean(),
-        finalProps: z.boolean().default(true),
-      }),
+      jsonString: z.string().describe("The JSON string to convert"),
+      modelName: z
+        .string()
+        .default("ExampleModel")
+        .describe("The name of the model"),
+      options: z
+        .object({
+          codersInClass: z
+            .boolean()
+            .default(true)
+            .describe(
+              "Whether to include `fromJson` and `toJson` methods in the class."
+            ),
+          useFreezed: z
+            .boolean()
+            .describe("Whether to use the `freezed` package"),
+          nullSafety: z
+            .boolean()
+            .default(true)
+            .describe("Whether to use null safety (default: true)"),
+          useJsonAnnotation: z
+            .boolean()
+
+            .describe("Whether to use the `json_annotation` package"),
+          copyWith: z
+            .boolean()
+            .describe("Whether to use the `copy_with` package"),
+          finalProps: z
+            .boolean()
+            .default(true)
+            .describe("Whether to use final properties (default: true)"),
+        })
+        .describe("Options to control the generated code"),
     },
   },
 
